@@ -8,9 +8,6 @@
     <title>Survey</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.js"
-        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-
 </head>
 
 <body>
@@ -30,7 +27,23 @@
     <div class="jumbotron">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="userName">Enter your Name</label>
+                        <input type="text" class="form-control" id="userName" placeholder="Full Name Here">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="userImage">Link to a picture of yourself</label>
+                        <input type="text" class="form-control" id="userImage" placeholder="Paste your link here">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
                     <div class="form-group">
                         <label for="q1">Your mind is always buzzing with unexplored ideas and plans.</label>
                         <select class="form-control" id="q1">
@@ -44,7 +57,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="form-group">
                         <label for="q2">Generally speaking, you rely more on your experience than your
                             imagination.</label>
@@ -60,7 +73,7 @@
             </div>
 
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="form-group">
                         <label for="q3">You find it easy to stay relaxed and focused even when there is some pressure.
                         </label>
@@ -75,7 +88,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="form-group">
                         <label for="q4">You rarely do something just out of sheer curiosity.</label>
                         <select class="form-control" id="q4">
@@ -89,7 +102,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="form-group">
                         <label for="q5">People can rarely upset you.</label>
                         <select class="form-control" id="q5">
@@ -103,7 +116,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="form-group">
                         <label for="q6">It is often difficult for you to relate to other people’s feelings.</label>
                         <select class="form-control" id="q6">
@@ -117,7 +130,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="form-group">
                         <label for="q7">In a discussion, truth should be more important than people’s
                             sensitivities.</label>
@@ -132,7 +145,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="form-group">
                         <label for="q8">You rarely get carried away by fantasies and ideas.</label>
                         <select class="form-control" id="q8">
@@ -146,7 +159,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="form-group">
                         <label for="q9">You think that everyone’s views should be respected regardless of whether they
                             are supported by facts or not.
@@ -162,7 +175,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="form-group">
                         <label for="q10">You feel more energetic after spending time with a group of people.
                         </label>
@@ -184,7 +197,61 @@
             </div>
         </div>
     </div>
-
+    <div id="results-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title"><strong>Best Match</strong></h2>
+                </div>
+                <div class="modal-body">
+                    <h2 id="match-name"></h2>
+                    <img id="match-img" src="" alt="">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $("#submit").on("click", event => {
+            event.preventDefault();
+            let newUser = {
+                "name": $("#userName").val().trim(),
+                "photo": $("#userImage").val(),
+                "scores": [
+                    parseInt($("#q1").val(), 10),
+                    parseInt($("#q2").val(), 10),
+                    parseInt($("#q3").val(), 10),
+                    parseInt($("#q4").val(), 10),
+                    parseInt($("#q5").val(), 10),
+                    parseInt($("#q6").val(), 10),
+                    parseInt($("#q7").val(), 10),
+                    parseInt($("#q8").val(), 10),
+                    parseInt($("#q9").val(), 10),
+                    parseInt($("#q10").val(), 10),
+                ]
+            }
+            console.log($("#q1").val())
+            console.log(newUser)
+            $.post("api/friends", newUser).then(function (data) {
+                console.log(data)
+                $("#match-name").text(data.name);
+                $("#match-img").attr("src", data.photo);
+                $("#results-modal").modal("toggle")
+            })
+        })
+    </script>
 </body>
 
 </html>

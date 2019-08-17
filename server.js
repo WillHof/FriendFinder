@@ -6,4 +6,4 @@ let PORT = 8080
 require("./app/routing/apiRoutes")(app);
 require("./app/routing/htmlRoutes")(app);
 
-app.listen(PORT, () => console.log("Application listening on port " + PORT))
+app.listen(PORT, () => console.log("Application listening on http://localhost:" + PORT))
